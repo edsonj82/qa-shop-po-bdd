@@ -32,15 +32,20 @@ describe('user registration', () => {
         user_registration.validateMessageError('O campo e-mail deve ser prenchido corretamente')
     });
 
-    it.only('field blank password', () => {
+    it('field blank password', () => {
         user_registration.fillName(faker.person.fullName())
         user_registration.fillEmail(faker.internet.email())
         user_registration.registrationClick()
         user_registration.validateMessageError('O campo senha deve ter pelo menos 6 dígitos')
         });
 
-    it('field invalid password', () => {
-
+    it.only('field invalid password', () => {
+        user_registration.fillName(faker.person.fullName())
+        user_registration.fillEmail(faker.internet.email())
+        user_registration.fillPassword('12345')
+        user_registration.registrationClick()
+        user_registration.validateMessageError('O campo senha deve ter pelo menos 6 dígitos')
+        
     });
 
 })

@@ -25,5 +25,9 @@ export default {
 
     fillEmail(email) {
         cy.get('#email').type(email)
+    },
+
+    fillPassword(password) {
+        cy.get('#password').type(password)
     }
 }
