@@ -17,5 +17,9 @@ export default {
         cy.get('.errorLabel')
             .should('be.visible')
             .should('have.text', message)
+    },
+    
+    fillName(name){
+        cy.get('#user').type(name)
     }
 }
