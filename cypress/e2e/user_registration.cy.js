@@ -2,7 +2,7 @@
 import commom_page from '../support/pages/commom_page'
 import user_registration from '../support/pages/user_registration'
 
-describe('login', () => {
+describe('user registration', () => {
     beforeEach('access user registration', () => {
         commom_page.acessUserRegistration()
     })
