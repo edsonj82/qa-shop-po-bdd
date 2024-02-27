@@ -18,8 +18,12 @@ export default {
             .should('be.visible')
             .should('have.text', message)
     },
-    
-    fillName(name){
+
+    fillName(name) {
         cy.get('#user').type(name)
+    },
+
+    fillEmail(email) {
+        cy.get('#email').type(email)
     }
 }

@@ -19,17 +19,25 @@ describe('user registration', () => {
         user_registration.validateMessageError('O campo nome deve ser prenchido')
     });
 
-    it.only('field blank e-mail', () => {
+    it('field blank e-mail', () => {
         user_registration.fillName(faker.person.fullName())
+        user_registration.registrationClick()
+        user_registration.validateMessageError('O campo e-mail deve ser prenchido corretamente')
     });
 
-    it('field invalid name', () => {
-
+    it('field invalid e-mail', () => {
+        user_registration.fillName(faker.person.fullName())
+        user_registration.fillEmail(faker.person.firstName())
+        user_registration.registrationClick()
+        user_registration.validateMessageError('O campo e-mail deve ser prenchido corretamente')
     });
 
-    it('field blank password', () => {
-
-    });
+    it.only('field blank password', () => {
+        user_registration.fillName(faker.person.fullName())
+        user_registration.fillEmail(faker.internet.email())
+        user_registration.registrationClick()
+        user_registration.validateMessageError('O campo senha deve ter pelo menos 6 dígitos')
+        });
 
     it('field invalid password', () => {
 
