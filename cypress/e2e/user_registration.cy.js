@@ -2,6 +2,8 @@
 import commom_page from '../support/pages/commom_page'
 import user_registration from '../support/pages/user_registration_page'
 
+import { faker } from '@faker-js/faker';
+
 describe('user registration', () => {
     beforeEach('access user registration', () => {
         commom_page.acessUserRegistration()
@@ -18,7 +20,7 @@ describe('user registration', () => {
     });
 
     it.only('field blank e-mail', () => {
-        user_registration.fillName('Edson')
+        user_registration.fillName(faker.person.fullName())
     });
 
     it('field invalid name', () => {
