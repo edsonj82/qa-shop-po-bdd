@@ -9,7 +9,7 @@ describe('user registration', () => {
 
 
     it('register successfully', () => {
-        
+
     });
 
     it('field blank name', () => {
@@ -17,8 +17,8 @@ describe('user registration', () => {
         user_registration.validateMessageError('O campo nome deve ser prenchido')
     });
 
-    it('field blank e-mail', () => {
-
+    it.only('field blank e-mail', () => {
+        user_registration.fillName('Edson')
     });
 
     it('field invalid name', () => {
