@@ -1,6 +1,6 @@
 ///<reference types="cypress" />
 import commom_page from '../support/pages/commom_page'
-import user_registration from '../support/pages/user_registration'
+import user_registration from '../support/pages/user_registration_page'
 
 describe('user registration', () => {
     beforeEach('access user registration', () => {

@@ -9,3 +9,6 @@
 
 executando cypress
 -npx cypress open
+
+instalando faker-js
+npm install @faker-js/faker --save-dev
