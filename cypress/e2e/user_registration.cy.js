@@ -1,19 +1,20 @@
 ///<reference types="cypress" />
 import commom_page from '../support/pages/commom_page'
-
+import user_registration from '../support/pages/user_registration'
 
 describe('login', () => {
     beforeEach('access user registration', () => {
-        commom_page.acessUserRestration()
+        commom_page.acessUserRegistration()
     })
 
 
     it('register successfully', () => {
-
+        
     });
 
     it('field blank name', () => {
-
+        user_registration.registrationClick()
+        user_registration.validateMessageError('O campo nome deve ser prenchido')
     });
 
     it('field blank e-mail', () => {
