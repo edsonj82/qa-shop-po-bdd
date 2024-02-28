@@ -9,6 +9,15 @@ describe('login', () => {
         commom_page.accessLogin()
     })
 
+    it('login successfully', () => {
+        const email = faker.internet.email()
+
+        login_page.fillEmail(email)
+        login_page.fillPassword('123sd@test')
+        login_page.loginClick()
+        login_page.validateMessageSuccess(email)
+    });
+
     it('field blank e-mail', () => {
         login_page.loginClick()
         login_page.validateMessageError('E-mail inválido.')
@@ -27,7 +36,7 @@ describe('login', () => {
         login_page.validateMessageError('E-mail inválido.')
     });
 
-    it.only('field invalid password', () => {
+    it('field invalid password', () => {
         login_page.fillEmail(faker.internet.email())
         login_page.fillPassword('123sd')
         login_page.loginClick()

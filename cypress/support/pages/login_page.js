@@ -17,5 +17,15 @@ export default {
 
     fillPassword(password) {
         cy.get('#password').type(password)
+    },
+
+    validateMessageSuccess(email) {
+        cy.get('#swal2-title')
+            .should('be.visible')
+            .should('have.text', 'Login realizado')
+
+        cy.get('#swal2-html-container')
+            .should('be.visible')
+            .should('have.text', `Olá, ${email}`)
     }
 }
