@@ -27,4 +27,12 @@ describe('login', () => {
         login_page.validateMessageError('E-mail inválido.')
     });
 
+    it.only('field invalid password', () => {
+        login_page.fillEmail(faker.internet.email())
+        login_page.fillPassword('123sd')
+        login_page.loginClick()
+        login_page.validateMessageError('Senha inválida.')
+        
+    });
+
 })
