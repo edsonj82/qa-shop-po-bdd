@@ -14,14 +14,17 @@ describe('login', () => {
         login_page.validateMessageError('E-mail inválido.')
     });
 
-    it.only('field blank password', () => {
+    it('field blank password', () => {
         login_page.fillEmail(faker.internet.email())
         login_page.loginClick()
         login_page.validateMessageError('Senha inválida.')
     });
 
-    it('field invalid password', () => {
-
+    it('field invalid e-mail', () => {
+        login_page.fillEmail('tata')
+        login_page.fillPassword('123@asd')
+        login_page.loginClick()
+        login_page.validateMessageError('E-mail inválido.')
     });
 
 })
