@@ -11,11 +11,19 @@ describe('user registration', () => {
 
 
     it('register successfully', () => {
+        const name = faker.person.fullName()
 
+        user_registration.fillName(name)
+        user_registration.fillEmail(faker.internet.email())
+        user_registration.fillPassword('12345@qazando')
+        user_registration.registrationClick()
+        user_registration.validateMessageSuccess(name)
     });
 
     it('field blank name', () => {
         user_registration.registrationClick()
+        user_registration.fillEmail(faker.internet.email())
+        user_registration.fillPassword('12345@qazando')
         user_registration.validateMessageError('O campo nome deve ser prenchido')
     });
 
@@ -37,15 +45,14 @@ describe('user registration', () => {
         user_registration.fillEmail(faker.internet.email())
         user_registration.registrationClick()
         user_registration.validateMessageError('O campo senha deve ter pelo menos 6 dígitos')
-        });
+    });
 
-    it.only('field invalid password', () => {
+    it('field invalid password', () => {
         user_registration.fillName(faker.person.fullName())
         user_registration.fillEmail(faker.internet.email())
         user_registration.fillPassword('12345')
         user_registration.registrationClick()
         user_registration.validateMessageError('O campo senha deve ter pelo menos 6 dígitos')
-        
     });
 
 })
