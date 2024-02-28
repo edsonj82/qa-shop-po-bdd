@@ -9,5 +9,9 @@ export default {
         cy.get('.invalid_input')
             .should('be.visible')
             .should('have.text', message)
+    },
+
+    fillEmail(email) {
+        cy.get('#user').type(email)
     }
 }
